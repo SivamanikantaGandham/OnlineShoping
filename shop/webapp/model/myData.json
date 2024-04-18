@@ -1,0 +1,39 @@
+{
+	"shopDetails":{
+		"Name" : "Fresh Market",
+		"address" : "Green Grove,New York",
+		"email" : "freshmarket@email.com",
+	    "phoneno" : "987-654-3210"
+	},
+	
+	"Products":[
+	{
+		"id" : "1",
+		"Name" : "Apples",
+		"price" : 2.99,
+		"quantity" : 1,
+        "currency" : "USD"
+	}, 
+	{
+		"id" : "2",
+		"Name" : "Bananas",
+		"price" : 1.99,
+		"quantity" : 1,
+        "currency" : "USD"
+	}, 
+	{
+		"id" : "3",
+		"Name" : "Oranges",
+		"price" : 3.49,
+		"quantity" : 1,
+        "currency" : "USD"
+	}, 
+	{
+		"id" : "4",
+		"Name" : "Grapes",
+		"price" : 4.99,
+		"quantity" : 1,
+		"currency" : "USD"
+	}
+	]
+}

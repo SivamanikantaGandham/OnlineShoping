@@ -1,0 +1,58 @@
+<mvc:View controllerName="com.demo.shop.controller.View1"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:SimpleForm editable="false" title="Shop Details" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="5" emptySpanM="5">
+                <f:content>
+                    <Label text="Shop Name"></Label>
+                    <Text text="{/shopDetails/Name}"/>
+                    <Label text="Address"></Label>
+                    <Text text="{/shopDetails/address}"/>
+                    <Label text="Email"></Label>
+                    <Text text="{/shopDetails/email}"/>
+                    <Label text="Phoneno"></Label>
+                    <Text text="{/shopDetails/phoneno}"/>
+                </f:content>
+            </f:SimpleForm>
+
+            <Title text="Products" />
+            <List id="idSelectedProduct" items="{/Products}">
+                <CustomListItem >
+                    <HBox>
+                        <Label class="listClass" text="{Name} ({quantity}) {currency}  {price}"/>
+                        <Button tooltip="Add to Cart" icon="sap-icon://add" press="onPressAdd"/>
+                        <Button tooltip="Remove from Cart" icon="sap-icon://delete" press="onRemoveFromCart" />
+                    </HBox>
+                </CustomListItem>
+            </List>
+
+
+            <Table id="table" items="{path:'Cart>/items'}" updateFinished="updateTable">
+                <columns>
+                    <Column hAlign="Center" width="10%">
+                        <Text text="Name"/>
+                    </Column>
+                    <Column hAlign="Center" width="10%">
+                        <Text text="Quantity * Price"/>
+                    </Column>
+                    <Column hAlign="Center" width="10%">
+                        <Text text="Total price"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <Text text="{Cart>Name}"/>
+                        <Text text="{Cart>quantity} * {Cart>price}"/>
+                        <Text text="{Cart>totalPrice}"/>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Button text="Order Now" icon="sap-icon://cart" press="onPressCheckout"/>
+            <Text id="id_TotalQuantity" width="10%" class="total"/>
+            <Text id="id_TotalPrice" class="total"/>
+
+        </content>
+    </Page>
+</mvc:View>
